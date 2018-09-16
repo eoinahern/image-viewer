@@ -28,6 +28,7 @@ dependencies {
     final FRESCO_VERSION = "1.9.0"
     final MOSHI_VERSION= "1.6.0"
     final RETROFIT_VERSION ="2.4.0"
+    final PAPER_PARCEL = "2.0.6"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:28.0.0-rc02"
@@ -66,4 +67,8 @@ dependencies {
 
     implementation "com.squareup.moshi:moshi:$MOSHI_VERSION"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$MOSHI_VERSION"
+
+    implementation "nz.bradcampbell:paperparcel:$PAPER_PARCEL"
+    implementation "nz.bradcampbell:paperparcel-kotlin:$PAPER_PARCEL"
+    kapt "nz.bradcampbell:paperparcel-compiler:$PAPER_PARCEL"
 }

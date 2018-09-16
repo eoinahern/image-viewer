@@ -16,4 +16,6 @@ interface SelectionView : BaseView {
 
 	fun onDataRetrieved(channelList: List<Channel>)
 
+	fun navigateToDetail(channel : Channel)
+
 }

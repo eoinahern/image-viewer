@@ -2,8 +2,10 @@ package imageviewer.eoinahern.ie.imageviewer.data.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import paperparcel.PaperParcel
+import paperparcel.PaperParcelable
 
-
+@PaperParcel
 @JsonClass(generateAdapter = true)
 data class Channel(
 
@@ -14,5 +16,12 @@ data class Channel(
 		val name: String,
 		@Json(name = "title")
 		val title: String,
-		@Json(name= "image")
-		val image: String)
+		@Json(name = "image")
+		val image: String) : PaperParcelable {
+
+	companion object {
+		@JvmField
+		val CREATOR = PaperParcelChannel.CREATOR
+	}
+
+}

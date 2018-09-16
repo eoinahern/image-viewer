@@ -24,8 +24,10 @@ class SelectionPresenter @Inject constructor(private val getSelectionInteractor:
 				getView()?.onError()
 			}
 		})
+	}
 
-
+	fun goToChannelDetail(channel : Channel) {
+		getView()?.navigateToDetail(channel)
 	}
 
 	override fun detachView() {

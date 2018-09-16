@@ -9,10 +9,12 @@ import android.support.v7.widget.LinearLayoutManager
 import dagger.android.AndroidInjection
 import imageviewer.eoinahern.ie.imageviewer.R
 import imageviewer.eoinahern.ie.imageviewer.data.model.Channel
+import imageviewer.eoinahern.ie.imageviewer.tools.CHANNEL_EXTRA
+import imageviewer.eoinahern.ie.imageviewer.ui.view.detail.DetailActivity
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_selection.*
 
-class SelectionActivity : AppCompatActivity(), SelectionView {
+class SelectionActivity : AppCompatActivity(), SelectionView, ChannelSelectCallback {
 
 	@Inject
 	lateinit var presenter: SelectionPresenter
@@ -33,6 +35,7 @@ class SelectionActivity : AppCompatActivity(), SelectionView {
 
 	private fun setupRecycler() {
 		recycler.layoutManager = GridLayoutManager(this, 2)
+		adapter.setCallback(this)
 		recycler.adapter = adapter
 	}
 
@@ -58,13 +61,21 @@ class SelectionActivity : AppCompatActivity(), SelectionView {
 		adapter.updataData(channelList)
 	}
 
-	companion object {
+	override fun onChannelSelected(position: Int) {
+		adapter.goToDetail(position)
+	}
 
+	override fun navigateToDetail(channel: Channel) {
+		val intent = DetailActivity.getStartIntent(this)
+		intent.putExtra(CHANNEL_EXTRA, channel)
+		startActivity(intent)
+	}
+
+	companion object {
 		fun getStartIntent(context: Context): Intent {
 			return Intent(context, SelectionActivity::class.java)
 		}
 	}
-
 
 	override fun onDestroy() {
 		super.onDestroy()
