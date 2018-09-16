@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import dagger.android.AndroidInjection
 import imageviewer.eoinahern.ie.imageviewer.R
@@ -25,13 +26,19 @@ class SelectionActivity : AppCompatActivity(), SelectionView {
 		setContentView(R.layout.activity_selection)
 		presenter.attachView(this)
 		setupRecycler()
+		setAppBar()
 		presenter.getChannelSelection()
 	}
 
 
 	private fun setupRecycler() {
-		recycler.layoutManager = LinearLayoutManager(this)
+		recycler.layoutManager = GridLayoutManager(this, 2)
 		recycler.adapter = adapter
+	}
+
+	private fun setAppBar() {
+		setSupportActionBar(toolbar)
+		supportActionBar?.title = "Selection"
 	}
 
 
@@ -48,9 +55,7 @@ class SelectionActivity : AppCompatActivity(), SelectionView {
 	}
 
 	override fun onDataRetrieved(channelList: List<Channel>) {
-		println(channelList[0].name)
-		println(channelList[0].bid)
-		println(channelList[0].image)
+		adapter.updataData(channelList)
 	}
 
 	companion object {

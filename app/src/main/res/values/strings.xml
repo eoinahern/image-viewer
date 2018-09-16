@@ -1,3 +1,6 @@
 <resources>
 	<string name="app_name">ImageViewer</string>
+	<string name="title_heading">Title: </string>
+	<string name="name_heading">Name: </string>
+	<string name="id_heading">ID: </string>
 </resources>
