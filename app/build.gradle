@@ -71,4 +71,7 @@ dependencies {
     implementation "nz.bradcampbell:paperparcel:$PAPER_PARCEL"
     implementation "nz.bradcampbell:paperparcel-kotlin:$PAPER_PARCEL"
     kapt "nz.bradcampbell:paperparcel-compiler:$PAPER_PARCEL"
+
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+
 }

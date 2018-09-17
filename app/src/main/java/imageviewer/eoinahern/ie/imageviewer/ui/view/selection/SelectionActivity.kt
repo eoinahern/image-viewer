@@ -46,15 +46,15 @@ class SelectionActivity : AppCompatActivity(), SelectionView, ChannelSelectCallb
 
 
 	override fun showLoading() {
-
+		loading.showLoading()
 	}
 
 	override fun hideLoading() {
-
+		loading.hideLoading()
 	}
 
 	override fun onError() {
-
+		loading.showError()
 	}
 
 	override fun onDataRetrieved(channelList: List<Channel>) {

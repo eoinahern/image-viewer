@@ -17,4 +17,8 @@
 		<item name="android:fontFamily">@font/abel</item>
 	</style>
 
+	<style name="ProgressTheme" >
+		<item name="colorAccent">@color/colorPrimary</item>
+	</style>
+
 </resources>
