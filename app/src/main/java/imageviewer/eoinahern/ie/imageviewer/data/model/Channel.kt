@@ -2,6 +2,7 @@ package imageviewer.eoinahern.ie.imageviewer.data.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import imageviewer.eoinahern.ie.imageviewer.tools.ChannelEndPoint
 import paperparcel.PaperParcel
 import paperparcel.PaperParcelable
 
@@ -25,3 +26,7 @@ data class Channel(
 	}
 
 }
+
+
+fun Channel.getChannelUrl() = ChannelEndPoint.plus(id)
+
