@@ -6,6 +6,10 @@ const val ApiEndPoint  = "https://live.fc2.com/contents/"
 const val ChannelEndPoint = "https://live.fc2.com/"
 
 
+//db
+const val DB_NAME = "database"
+
+
 const val dots = "..."
 
 //intent

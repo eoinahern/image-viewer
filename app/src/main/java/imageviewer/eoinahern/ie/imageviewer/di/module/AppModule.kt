@@ -10,6 +10,7 @@ import imageviewer.eoinahern.ie.imageviewer.App
 import imageviewer.eoinahern.ie.imageviewer.data.database.AppDataBase
 import imageviewer.eoinahern.ie.imageviewer.data.database.dao.ChannelDao
 import imageviewer.eoinahern.ie.imageviewer.data.database.dao.UserDao
+import imageviewer.eoinahern.ie.imageviewer.tools.constant.DB_NAME
 import imageviewer.eoinahern.ie.imageviewer.tools.string.Validation
 import javax.inject.Singleton
 
@@ -26,10 +27,7 @@ class AppModule constructor(private val app: App) {
 
 	@Singleton
 	@Provides
-	fun getDatabase(context: Context): AppDataBase = Room.databaseBuilder(context,
-			AppDataBase::class.java, "database")
-			.fallbackToDestructiveMigration()
-			.build()
+	fun getDatabase(context: Context): AppDataBase = AppDataBase.getInstance(context)
 
 
 	@Singleton

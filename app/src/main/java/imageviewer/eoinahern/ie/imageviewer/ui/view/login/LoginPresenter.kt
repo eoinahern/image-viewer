@@ -16,10 +16,10 @@ class LoginPresenter @Inject constructor(private val loginUserInteractor: LoginU
 	fun loginUser(userCredentials: UserCredentials) {
 
 		loginUserInteractor.setUserCredentials(userCredentials)
-				.execute(object : BaseSubscriber<Boolean>() {
-					override fun onNext(t: Boolean) {
+				.execute(object : BaseSubscriber<Int>() {
+					override fun onNext(count: Int) {
 
-						if (t) {
+						if (count == 1) {
 							getView()?.hideLoading()
 							getView()?.goToSelection()
 						} else {
