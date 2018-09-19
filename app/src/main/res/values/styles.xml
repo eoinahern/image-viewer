@@ -30,4 +30,23 @@
 		<item name="android:fontFamily">@font/abel</item>
 	</style>
 
+	<style name="MyTextInputLayoutTheme">
+		<item name="hintAnimationEnabled">false</item>
+		<item name="android:fontFamily">@font/abel</item>
+		<item name="android:textSize">18dp</item>
+		<item name="android:colorControlActivated">@color/dark_grey</item>
+		<item name="android:colorControlHighlight">@color/dark_grey</item>
+		<item name="android:colorActivatedHighlight">@color/dark_grey</item>
+	</style>
+
+	<style name="ErrorTextInputFontStyle" parent="TextAppearance.Design.Error">
+		<item name="android:fontFamily">@font/abel</item>
+		<item name="android:textSize">16dp</item>
+		<item name="android:textColor">@color/warning_red</item>
+		<item name="android:colorControlHighlight">@color/dark_grey</item>
+		<item name="android:colorControlActivated">@color/dark_grey</item>
+		<item name="android:colorActivatedHighlight">@color/dark_grey</item>
+		<item name="android:colorControlNormal">@color/dark_grey</item>
+	</style>
+
 </resources>

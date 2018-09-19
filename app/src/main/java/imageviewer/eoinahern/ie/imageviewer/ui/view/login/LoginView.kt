@@ -13,4 +13,6 @@ interface LoginView : BaseView {
 
 	fun goToSelection()
 
+	fun showEmailValidationError(valid: Boolean)
+
 }

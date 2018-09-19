@@ -30,6 +30,7 @@ dependencies {
     final PAPER_PARCEL = "2.0.6"
     final ROOM_VERSION = "1.1.1"
     final SUPPORT_LIB = "28.0.0-rc02"
+    final RXBINDINGS_VERSION = '2.1.1'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:$SUPPORT_LIB"
@@ -79,4 +80,6 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$ROOM_VERSION"
     kapt "android.arch.persistence.room:compiler:$ROOM_VERSION"
     implementation "android.arch.persistence.room:rxjava2:$ROOM_VERSION"
+
+    implementation "com.jakewharton.rxbinding2:rxbinding:$RXBINDINGS_VERSION"
 }
