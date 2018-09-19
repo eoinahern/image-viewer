@@ -2,22 +2,22 @@ package imageviewer.eoinahern.ie.imageviewer.ui.view.splash
 
 import imageviewer.eoinahern.ie.imageviewer.di.annotation.PerScreen
 import imageviewer.eoinahern.ie.imageviewer.domain.base.BaseSubscriber
-import imageviewer.eoinahern.ie.imageviewer.domain.splash.CheckTimeoutInteractor
+import imageviewer.eoinahern.ie.imageviewer.domain.splash.CheckStateInteractor
 import imageviewer.eoinahern.ie.imageviewer.ui.base.BasePresenter
 import javax.inject.Inject
 
 @PerScreen
-class SplashPresenter @Inject constructor(private val checkTimeoutInteractor: CheckTimeoutInteractor) : BasePresenter<SplashView>() {
+class SplashPresenter @Inject constructor(private val checkStateInteractor: CheckStateInteractor) : BasePresenter<SplashView>() {
 
 	fun checkTimeoutExpired() {
 
-		checkTimeoutInteractor.execute(object : BaseSubscriber<Boolean>() {
-			override fun onNext(timedOut: Boolean) {
+		checkStateInteractor.execute(object : BaseSubscriber<Boolean>() {
+			override fun onNext(canProceed: Boolean) {
 
-				if (timedOut) {
-					getView()?.goToLoginScreen()
-				} else {
+				if (canProceed) {
 					getView()?.goToSelectionScreen()
+				} else {
+					getView()?.goToLoginScreen()
 				}
 			}
 
@@ -25,8 +25,5 @@ class SplashPresenter @Inject constructor(private val checkTimeoutInteractor: Ch
 				getView()?.goToLoginScreen()
 			}
 		})
-
 	}
-
-
 }

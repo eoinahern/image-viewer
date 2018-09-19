@@ -10,6 +10,7 @@ import imageviewer.eoinahern.ie.imageviewer.di.component.DaggerAppComponent
 import imageviewer.eoinahern.ie.imageviewer.di.module.AppModule
 import imageviewer.eoinahern.ie.imageviewer.tools.lifecycler.OnStopLifecycleListener
 import android.arch.lifecycle.ProcessLifecycleOwner
+import com.jakewharton.threetenabp.AndroidThreeTen
 import javax.inject.Inject
 
 class App : Application(), HasActivityInjector {
@@ -24,6 +25,7 @@ class App : Application(), HasActivityInjector {
 		super.onCreate()
 
 		Fresco.initialize(this)
+		AndroidThreeTen.init(this)
 		DaggerAppComponent.builder().appModule(AppModule(this)).build().inject(this)
 		setupLifecyclerListener()
 	}

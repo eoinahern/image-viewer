@@ -15,3 +15,4 @@ const val dots = "..."
 //intent
 const val CHANNEL_EXTRA = "channel"
 const val TIMEOUT_STR = "timeout"
+const val LOGGEDIN = "loggedin"

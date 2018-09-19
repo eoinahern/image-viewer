@@ -14,4 +14,12 @@ class SharedPreferencesHelper @Inject constructor(private val sharedPreferences:
 	fun getString(key: String): String? {
 		return sharedPreferences.getString(key, "")
 	}
+
+	fun saveBool(key: String, value: Boolean) {
+		sharedPrefsEdit.putBoolean(key, value).commit()
+	}
+
+	fun getBool(key: String): Boolean {
+		return sharedPreferences.getBoolean(key, false)
+	}
 }
