@@ -1,5 +1,7 @@
 package imageviewer.eoinahern.ie.imageviewer.ui.view.login
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
@@ -82,6 +84,12 @@ class LoginActivity : AppCompatActivity(), LoginView {
 		} else {
 			emailInputLayout.error = getString(R.string.invalid_email_error)
 			disableLoginButton()
+		}
+	}
+
+	companion object {
+		fun getStartIntent(context: Context): Intent {
+			return Intent(context, LoginActivity::class.java)
 		}
 	}
 

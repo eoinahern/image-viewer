@@ -11,6 +11,8 @@ import imageviewer.eoinahern.ie.imageviewer.data.database.AppDataBase
 import imageviewer.eoinahern.ie.imageviewer.data.database.dao.ChannelDao
 import imageviewer.eoinahern.ie.imageviewer.data.database.dao.UserDao
 import imageviewer.eoinahern.ie.imageviewer.tools.constant.DB_NAME
+import imageviewer.eoinahern.ie.imageviewer.tools.lifecycler.OnStopLifecycleListener
+import imageviewer.eoinahern.ie.imageviewer.tools.preferences.SharedPreferencesHelper
 import imageviewer.eoinahern.ie.imageviewer.tools.string.Validation
 import javax.inject.Singleton
 
@@ -24,6 +26,12 @@ class AppModule constructor(private val app: App) {
 	@Singleton
 	@Provides
 	fun getPrefs(context: Context): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+	@Singleton
+	@Provides
+	fun getPrefsEdit(sharedPrefs: SharedPreferences): SharedPreferences.Editor {
+		return sharedPrefs.edit()
+	}
 
 	@Singleton
 	@Provides
