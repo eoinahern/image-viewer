@@ -6,6 +6,4 @@ interface DetailsView : BaseView{
 
 	fun showLoading()
 
-	fun hideLoading()
-
 }

@@ -1,16 +1,20 @@
 package imageviewer.eoinahern.ie.imageviewer.data.model
 
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import imageviewer.eoinahern.ie.imageviewer.tools.ChannelEndPoint
+import imageviewer.eoinahern.ie.imageviewer.tools.constant.ChannelEndPoint
 import paperparcel.PaperParcel
 import paperparcel.PaperParcelable
 
 @PaperParcel
+@Entity
 @JsonClass(generateAdapter = true)
 data class Channel(
 
 		@Json(name = "id")
+		@PrimaryKey
 		val id: String,
 		val fc2id: Long,
 		val bid: String,

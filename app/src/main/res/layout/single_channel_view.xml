@@ -1,105 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	xmlns:tools="http://schemas.android.com/tools"
 	android:elevation="8dp"
 	android:padding="12dp">
 
 
-	<com.facebook.drawee.view.SimpleDraweeView
-		android:id="@+id/image"
-		android:layout_width="90dp"
-		android:layout_height="90dp"
-		app:actualImageScaleType="centerCrop"
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent">
 
 
-	<LinearLayout
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5dp"
-		android:orientation="vertical"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/image">
+		<com.facebook.drawee.view.SimpleDraweeView
+			android:id="@+id/image"
+			android:layout_width="110dp"
+			android:layout_height="90dp"
+			app:actualImageScaleType="centerCrop"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
 
 		<LinearLayout
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal">
+			android:layout_marginStart="12dp"
+			android:orientation="vertical"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/image"
+			app:layout_constraintTop_toTopOf="parent">
 
-			<TextView
+
+			<LinearLayout
 				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:fontFamily="@font/abel"
-				android:text="@string/id_heading"
-				android:textColor="@color/dark_grey"
-				android:textSize="18dp" />
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
 
-			<TextView
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:fontFamily="@font/abel"
+					android:text="@string/id_heading"
+					android:textColor="@color/dark_grey"
+					android:textSize="18dp" />
+
+				<TextView
+					android:id="@+id/idText"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="4dp"
+					android:fontFamily="@font/abel"
+					android:textColor="@color/dark_grey"
+					android:textSize="18dp" />
+
+			</LinearLayout>
+
+			<LinearLayout
 				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:id="@+id/idText"
-				android:fontFamily="@font/abel"
-				android:layout_marginLeft="4dp"
-				android:textColor="@color/dark_grey"
-				android:textSize="18dp" />
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
 
-		</LinearLayout>
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:fontFamily="@font/abel"
+					android:text="@string/name_heading"
+					android:textColor="@color/dark_grey"
+					android:textSize="18dp" />
 
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal">
+				<TextView
+					android:id="@+id/nameText"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="4dp"
+					android:fontFamily="@font/abel"
+					android:maxLines="1"
+					android:textColor="@color/dark_grey"
+					android:textSize="18dp"
+					tools:text="name" />
 
-			<TextView
+			</LinearLayout>
+
+			<LinearLayout
 				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:fontFamily="@font/abel"
-				android:text="@string/name_heading"
-				android:textColor="@color/dark_grey"
-				android:textSize="18dp" />
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
 
-			<TextView
-				android:id="@+id/nameText"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:layout_marginLeft="4dp"
-				android:fontFamily="@font/abel"
-				android:textColor="@color/dark_grey"
-				android:textSize="18dp"
-				tools:text="name" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:fontFamily="@font/abel"
+					android:text="@string/title_heading"
+					android:textColor="@color/dark_grey"
+					android:textSize="18dp"
+					tools:text="@string/title_heading" />
 
-		</LinearLayout>
+				<TextView
+					android:id="@+id/titleText"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="4dp"
+					android:fontFamily="@font/abel"
+					android:maxLines="1"
+					android:textColor="@color/dark_grey"
+					android:textSize="18dp"
+					tools:text="titlesslsl" />
 
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal">
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:fontFamily="@font/abel"
-				android:text="@string/title_heading"
-				android:textColor="@color/dark_grey"
-				android:textSize="18dp"
-				tools:text="@string/title_heading" />
-
-			<TextView
-				android:id="@+id/titleText"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:layout_marginLeft="4dp"
-				android:fontFamily="@font/abel"
-				android:textColor="@color/dark_grey"
-				android:textSize="18dp"
-				tools:text="title" />
+			</LinearLayout>
 
 		</LinearLayout>
 

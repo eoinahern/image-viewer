@@ -19,9 +19,7 @@ class App : Application(), HasActivityInjector {
 		super.onCreate()
 
 		Fresco.initialize(this)
-		DaggerAppComponent.builder().build().inject(this)
-
-				//.appModule(AppModule(this))
+		DaggerAppComponent.builder().appModule(AppModule(this)).build().inject(this)
 	}
 
 	override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector

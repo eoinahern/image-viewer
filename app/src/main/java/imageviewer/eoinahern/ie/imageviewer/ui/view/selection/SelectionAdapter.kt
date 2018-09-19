@@ -9,10 +9,11 @@ import com.facebook.drawee.view.SimpleDraweeView
 import imageviewer.eoinahern.ie.imageviewer.R
 import imageviewer.eoinahern.ie.imageviewer.data.model.Channel
 import imageviewer.eoinahern.ie.imageviewer.di.annotation.PerScreen
+import imageviewer.eoinahern.ie.imageviewer.tools.string.StringUtility
 import javax.inject.Inject
 
 @PerScreen
-class SelectionAdapter @Inject constructor(private val presenter: SelectionPresenter) : RecyclerView.Adapter<SelectionAdapter.ViewHolder>() {
+class SelectionAdapter @Inject constructor(private val presenter: SelectionPresenter, private val stringUtil: StringUtility) : RecyclerView.Adapter<SelectionAdapter.ViewHolder>() {
 
 	private val channels: MutableList<Channel> = mutableListOf()
 	private lateinit var channelSelectCallback: ChannelSelectCallback
@@ -25,15 +26,12 @@ class SelectionAdapter @Inject constructor(private val presenter: SelectionPrese
 	override fun getItemCount(): Int = channels.size
 
 	override fun onBindViewHolder(vh: ViewHolder, position: Int) {
-
 		val chan = channels[position]
-
 		vh.id.text = chan.id
-		vh.name.text = chan.name
-		vh.title.text = chan.title
+		vh.name.text = stringUtil.ellipsizeString(chan.name)
+		vh.title.text = stringUtil.ellipsizeString(chan.title)
 		vh.image.setImageURI(chan.image)
 	}
-
 
 	fun updataData(channelsList: List<Channel>) {
 

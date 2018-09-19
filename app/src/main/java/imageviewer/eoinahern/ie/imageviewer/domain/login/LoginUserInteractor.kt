@@ -1,15 +1,29 @@
 package imageviewer.eoinahern.ie.imageviewer.domain.login
 
+import imageviewer.eoinahern.ie.imageviewer.data.database.AppDataBase
+import imageviewer.eoinahern.ie.imageviewer.data.database.dao.UserDao
+import imageviewer.eoinahern.ie.imageviewer.data.model.UserCredentials
+import imageviewer.eoinahern.ie.imageviewer.di.annotation.PerScreen
 import imageviewer.eoinahern.ie.imageviewer.domain.base.BaseInteractor
 import io.reactivex.Observable
+import javax.inject.Inject
+
+@PerScreen
+class LoginUserInteractor @Inject constructor(database: AppDataBase) : BaseInteractor<Boolean>() {
+
+	private lateinit var userCredentials: UserCredentials
+	private var userDB: UserDao = database.getUserDao()
 
 
-class LoginUserInteractor constructor() : BaseInteractor<Boolean>() {
-
-
+	fun setUserCredentials(userCredentials: UserCredentials): LoginUserInteractor {
+		this.userCredentials = userCredentials
+		return this
+	}
 
 	override fun buildObservable(): Observable<Boolean> {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+		return Observable.fromCallable {
+			true
+		}
 	}
 
 

@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import dagger.android.AndroidInjection
 import imageviewer.eoinahern.ie.imageviewer.R
 import imageviewer.eoinahern.ie.imageviewer.data.model.Channel
-import imageviewer.eoinahern.ie.imageviewer.tools.CHANNEL_EXTRA
+import imageviewer.eoinahern.ie.imageviewer.tools.constant.CHANNEL_EXTRA
 import imageviewer.eoinahern.ie.imageviewer.ui.view.detail.DetailActivity
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_selection.*
@@ -34,7 +34,8 @@ class SelectionActivity : AppCompatActivity(), SelectionView, ChannelSelectCallb
 
 
 	private fun setupRecycler() {
-		recycler.layoutManager = GridLayoutManager(this, 2)
+		recycler.layoutManager = LinearLayoutManager(this)
+		recycler.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 		adapter.setCallback(this)
 		recycler.adapter = adapter
 	}

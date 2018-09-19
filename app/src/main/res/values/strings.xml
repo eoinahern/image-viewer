@@ -5,4 +5,8 @@
 	<string name="id_heading">ID: </string>
 	<string name="loading">Loading...</string>
 	<string name="error_loading">Error loading data from server?</string>
+	<string name="password_hint">Password</string>
+	<string name="email_hint">Email</string>
+	<string name="login_txt">Login</string>
+	<string name="login_failed">Login failed. please try again!</string>
 </resources>
