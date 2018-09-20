@@ -26,4 +26,9 @@ class SplashPresenter @Inject constructor(private val checkStateInteractor: Chec
 			}
 		})
 	}
+
+	override fun detachView() {
+		super.detachView()
+		checkStateInteractor.clearDisposables()
+	}
 }

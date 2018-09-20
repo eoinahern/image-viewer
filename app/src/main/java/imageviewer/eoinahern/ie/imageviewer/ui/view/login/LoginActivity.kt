@@ -97,4 +97,9 @@ class LoginActivity : AppCompatActivity(), LoginView {
 		startActivity(SelectionActivity.getStartIntent(this))
 		finish()
 	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		presenter.detachView()
+	}
 }

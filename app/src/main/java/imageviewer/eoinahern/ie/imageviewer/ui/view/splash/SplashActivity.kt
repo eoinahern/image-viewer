@@ -53,5 +53,10 @@ class SplashActivity : AppCompatActivity(), SplashView {
 		finish()
 	}
 
+	override fun onDestroy() {
+		super.onDestroy()
+		presenter.detachView()
+	}
+
 
 }

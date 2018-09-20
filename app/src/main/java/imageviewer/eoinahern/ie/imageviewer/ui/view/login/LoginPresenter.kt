@@ -37,4 +37,9 @@ class LoginPresenter @Inject constructor(private val loginUserInteractor: LoginU
 	fun validateEmail(emailStr: String) {
 		getView()?.showEmailValidationError(validation.validateEmail(emailStr))
 	}
+
+	override fun detachView() {
+		super.detachView()
+		loginUserInteractor.clearDisposables()
+	}
 }

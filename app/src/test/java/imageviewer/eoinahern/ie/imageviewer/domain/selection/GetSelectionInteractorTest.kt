@@ -1,9 +1,11 @@
 package imageviewer.eoinahern.ie.imageviewer.domain.selection
 
 import imageviewer.eoinahern.ie.imageviewer.data.api.MyApi
+import imageviewer.eoinahern.ie.imageviewer.data.database.dao.ChannelDao
 import imageviewer.eoinahern.ie.imageviewer.data.model.Channel
 import imageviewer.eoinahern.ie.imageviewer.data.model.ChannelData
 import io.reactivex.Observable
+import io.reactivex.Single
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
@@ -17,9 +19,11 @@ class GetSelectionInteractorTest {
 	@Mock
 	lateinit var mockMyApi: MyApi
 
-
 	@Mock
 	lateinit var mockChannelData: ChannelData
+
+	@Mock
+	lateinit var mockChannelDao: ChannelDao
 
 	@Mock
 	lateinit var mockChannelList: List<Channel>
@@ -33,12 +37,12 @@ class GetSelectionInteractorTest {
 	fun setUp() {
 
 		MockitoAnnotations.initMocks(this)
-		getSelectionInteractor = GetSelectionInteractor(mockMyApi)
+		getSelectionInteractor = GetSelectionInteractor(mockMyApi, mockChannelDao)
 	}
 
 	@Test
 	fun testBuildObservable() {
-
+		`when`(mockChannelDao.countRows()).thenReturn(Single.just(0))
 		`when`(mockMyApi.getChannels()).thenReturn(Observable.just(mockChannelData))
 		`when`(mockChannelData.channels).thenReturn(mockChannelList)
 		`when`(mockChannelList[0]).thenReturn(mockChannel)

@@ -24,8 +24,7 @@ class CheckStateInteractorTest {
 
 	@Mock
 	lateinit var mockSharedPreferencesHelper: SharedPreferencesHelper
-
-	lateinit var checkStateInteractor: CheckStateInteractor
+	private lateinit var checkStateInteractor: CheckStateInteractor
 
 	@Before
 	fun setUp() {
