@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import javax.inject.Inject
 
 
-class SharedPreferencesHelper @Inject constructor(private val sharedPreferences: SharedPreferences,
+open class SharedPreferencesHelper @Inject constructor(private val sharedPreferences: SharedPreferences,
 												  private val sharedPrefsEdit: SharedPreferences.Editor) {
 
 	fun saveString(key: String, value: String) {

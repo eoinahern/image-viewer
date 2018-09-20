@@ -8,6 +8,7 @@ import org.junit.Before
 
 import org.junit.Assert.*
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.`when`
@@ -31,7 +32,6 @@ class CheckStateInteractorTest {
 		MockitoAnnotations.initMocks(this)
 		checkStateInteractor = CheckStateInteractor(mockChannelDao, mockDateTimeValid, mockSharedPreferencesHelper)
 	}
-
 
 	@Test
 	fun testBuildObservable() {
