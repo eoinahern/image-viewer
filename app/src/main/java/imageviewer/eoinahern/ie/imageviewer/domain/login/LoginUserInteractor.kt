@@ -28,8 +28,7 @@ class LoginUserInteractor @Inject constructor(private val userDao: UserDao,
 					if (it > 0)
 						sharedPrefsHelper.saveBool(LOGGEDIN, true)
 					it
-				}
-				.delay(2, TimeUnit.SECONDS)
+				}.delay(2, TimeUnit.SECONDS)
 				.toObservable()
 	}
 }

@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 
 @PerScreen
-class GetSelectionInteractor @Inject constructor(private var myApi: MyApi) : BaseInteractor<List<Channel>>() {
+public class GetSelectionInteractor @Inject constructor(private var myApi: MyApi) : BaseInteractor<List<Channel>>() {
 
 	override fun buildObservable(): Observable<List<Channel>> {
 		return myApi.getChannels().map { it.channels }

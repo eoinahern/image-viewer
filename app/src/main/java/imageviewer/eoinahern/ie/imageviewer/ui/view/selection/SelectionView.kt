@@ -5,7 +5,7 @@ import imageviewer.eoinahern.ie.imageviewer.data.model.ChannelData
 import imageviewer.eoinahern.ie.imageviewer.ui.base.BaseView
 
 
-interface SelectionView : BaseView {
+open interface SelectionView : BaseView {
 
 
 	fun showLoading()
