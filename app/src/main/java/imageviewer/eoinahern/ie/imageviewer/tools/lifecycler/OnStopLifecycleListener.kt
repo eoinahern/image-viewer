@@ -14,7 +14,7 @@ class OnStopLifecycleListener @Inject constructor(private val sharedPrefsHelper:
 
 	@OnLifecycleEvent(Lifecycle.Event.ON_STOP)
 	fun onMoveToBackground() {
-		sharedPrefsHelper.saveString(TIMEOUT_STR, LocalDateTime.now().plusSeconds(20)
+		sharedPrefsHelper.saveString(TIMEOUT_STR, LocalDateTime.now().plusMinutes(5)
 				.toString())
 	}
 

@@ -32,7 +32,6 @@ class SelectionActivity : AppCompatActivity(), SelectionView, ChannelSelectCallb
 		presenter.getChannelSelection()
 	}
 
-
 	private fun setupRecycler() {
 		recycler.layoutManager = LinearLayoutManager(this)
 		recycler.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
@@ -42,9 +41,8 @@ class SelectionActivity : AppCompatActivity(), SelectionView, ChannelSelectCallb
 
 	private fun setAppBar() {
 		setSupportActionBar(toolbar)
-		supportActionBar?.title = "Selection"
+		supportActionBar?.title = getString(R.string.selection_title)
 	}
-
 
 	override fun showLoading() {
 		loading.showLoading()
