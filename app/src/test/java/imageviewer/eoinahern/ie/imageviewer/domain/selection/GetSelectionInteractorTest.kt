@@ -4,7 +4,6 @@ import imageviewer.eoinahern.ie.imageviewer.data.api.MyApi
 import imageviewer.eoinahern.ie.imageviewer.data.model.Channel
 import imageviewer.eoinahern.ie.imageviewer.data.model.ChannelData
 import io.reactivex.Observable
-import org.junit.Assert
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

@@ -11,7 +11,7 @@ abstract class BaseInteractor<T> {
 
 	var compDisposable: CompositeDisposable = CompositeDisposable()
 
-	fun execute(obs: Observer<T>) {
+	fun execute(obs: BaseSubscriber<T>) {
 
 		buildObservable()
 				.subscribeOn(Schedulers.io())
