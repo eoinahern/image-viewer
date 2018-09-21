@@ -29,17 +29,12 @@ class SplashActivity : AppCompatActivity(), SplashView {
 		imview.startAnimation(startAnim)
 
 		startAnim.setAnimationListener(object : Animation.AnimationListener {
-			override fun onAnimationRepeat(animation: Animation?) {
-			}
-
+			override fun onAnimationRepeat(animation: Animation?) {}
 			override fun onAnimationEnd(animation: Animation?) {
 				presenter.checkTimeoutExpired()
-				//goToLoginScreen()
-				//finish()
 			}
 
-			override fun onAnimationStart(animation: Animation?) {
-			}
+			override fun onAnimationStart(animation: Animation?) {}
 		})
 	}
 
