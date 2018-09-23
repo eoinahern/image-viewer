@@ -14,7 +14,6 @@ import org.mockito.MockitoAnnotations
 
 class LoginPresenterTest {
 
-
 	@Mock
 	lateinit var loginUserInteractor: LoginUserInteractor
 

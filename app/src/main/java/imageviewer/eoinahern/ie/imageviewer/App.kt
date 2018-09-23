@@ -11,6 +11,7 @@ import imageviewer.eoinahern.ie.imageviewer.di.module.AppModule
 import imageviewer.eoinahern.ie.imageviewer.tools.lifecycler.OnStopLifecycleListener
 import android.arch.lifecycle.ProcessLifecycleOwner
 import com.jakewharton.threetenabp.AndroidThreeTen
+import imageviewer.eoinahern.ie.imageviewer.di.component.AppComponent
 import javax.inject.Inject
 
 class App : Application(), HasActivityInjector {

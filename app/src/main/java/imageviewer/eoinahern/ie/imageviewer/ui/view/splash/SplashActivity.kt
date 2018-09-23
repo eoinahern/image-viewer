@@ -6,6 +6,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import dagger.android.AndroidInjection
 import imageviewer.eoinahern.ie.imageviewer.R
+import imageviewer.eoinahern.ie.imageviewer.tools.views.navigateToActivity
 import imageviewer.eoinahern.ie.imageviewer.ui.view.login.LoginActivity
 import imageviewer.eoinahern.ie.imageviewer.ui.view.selection.SelectionActivity
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -39,12 +40,14 @@ class SplashActivity : AppCompatActivity(), SplashView {
 	}
 
 	override fun goToLoginScreen() {
-		startActivity(LoginActivity.getStartIntent(this))
+		//startActivity(LoginActivity.getStartIntent(this))
+		navigateToActivity<LoginActivity>(this)
 		finish()
 	}
 
 	override fun goToSelectionScreen() {
-		startActivity(SelectionActivity.getStartIntent(this))
+		//startActivity(SelectionActivity.getStartIntent(this))
+		navigateToActivity<SelectionActivity>(this)
 		finish()
 	}
 

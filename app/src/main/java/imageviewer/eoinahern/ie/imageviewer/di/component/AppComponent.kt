@@ -6,6 +6,7 @@ import imageviewer.eoinahern.ie.imageviewer.App
 import imageviewer.eoinahern.ie.imageviewer.di.module.AppModule
 import imageviewer.eoinahern.ie.imageviewer.di.module.BuilderModule
 import imageviewer.eoinahern.ie.imageviewer.di.module.NetworkModule
+import imageviewer.eoinahern.ie.imageviewer.ui.view.splash.SplashPresenter
 
 import javax.inject.Singleton
 
