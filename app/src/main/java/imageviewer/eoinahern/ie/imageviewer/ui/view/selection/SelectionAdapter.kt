@@ -10,6 +10,8 @@ import imageviewer.eoinahern.ie.imageviewer.R
 import imageviewer.eoinahern.ie.imageviewer.data.model.Channel
 import imageviewer.eoinahern.ie.imageviewer.di.annotation.PerScreen
 import imageviewer.eoinahern.ie.imageviewer.tools.string.StringUtility
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.single_channel_view.*
 import javax.inject.Inject
 
 @PerScreen
@@ -27,9 +29,9 @@ class SelectionAdapter @Inject constructor(private val presenter: SelectionPrese
 
 	override fun onBindViewHolder(vh: ViewHolder, position: Int) {
 		val chan = channels[position]
-		vh.id.text = chan.id
-		vh.name.text = stringUtil.ellipsizeString(chan.name)
-		vh.title.text = stringUtil.ellipsizeString(chan.title)
+		vh.idText.text = chan.id
+		vh.nameText.text = stringUtil.ellipsizeString(chan.name)
+		vh.titleText.text = stringUtil.ellipsizeString(chan.title)
 		vh.image.setImageURI(chan.image)
 	}
 
@@ -50,12 +52,8 @@ class SelectionAdapter @Inject constructor(private val presenter: SelectionPrese
 		this.channelSelectCallback = channelSelectCallback
 	}
 
-	class ViewHolder(v: View, channelSelectCallback: ChannelSelectCallback) : RecyclerView.ViewHolder(v) {
-
-		val image: SimpleDraweeView by lazy { v.findViewById<SimpleDraweeView>(R.id.image) }
-		val id: TextView by lazy { v.findViewById<TextView>(R.id.idText) }
-		val name: TextView by lazy { v.findViewById<TextView>(R.id.nameText) }
-		val title: TextView by lazy { v.findViewById<TextView>(R.id.titleText) }
+	inner class ViewHolder(override val containerView: View, channelSelectCallback: ChannelSelectCallback)
+		: RecyclerView.ViewHolder(containerView), LayoutContainer {
 
 		init {
 			itemView.setOnClickListener {

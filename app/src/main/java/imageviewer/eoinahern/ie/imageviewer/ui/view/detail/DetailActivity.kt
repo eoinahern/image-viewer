@@ -50,10 +50,4 @@ class DetailActivity : AppCompatActivity() {
 			finish()
 		}
 	}
-
-	companion object {
-		fun getStartIntent(context: Context): Intent {
-			return Intent(context, DetailActivity::class.java)
-		}
-	}
 }
