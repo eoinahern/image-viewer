@@ -40,13 +40,11 @@ class SplashActivity : AppCompatActivity(), SplashView {
 	}
 
 	override fun goToLoginScreen() {
-		//startActivity(LoginActivity.getStartIntent(this))
 		navigateToActivity<LoginActivity>(this)
 		finish()
 	}
 
 	override fun goToSelectionScreen() {
-		//startActivity(SelectionActivity.getStartIntent(this))
 		navigateToActivity<SelectionActivity>(this)
 		finish()
 	}

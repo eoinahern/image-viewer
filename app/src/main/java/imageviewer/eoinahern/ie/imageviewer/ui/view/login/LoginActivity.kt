@@ -1,14 +1,12 @@
 package imageviewer.eoinahern.ie.imageviewer.ui.view.login
 
-import android.content.Context
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import com.jakewharton.rxbinding2.widget.RxTextView
 import dagger.android.AndroidInjection
 import imageviewer.eoinahern.ie.imageviewer.R
 import imageviewer.eoinahern.ie.imageviewer.data.model.UserCredentials
+import imageviewer.eoinahern.ie.imageviewer.tools.views.navigateToActivity
 import imageviewer.eoinahern.ie.imageviewer.ui.view.selection.SelectionActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.activity_login.*
@@ -87,14 +85,8 @@ class LoginActivity : AppCompatActivity(), LoginView {
 		}
 	}
 
-	companion object {
-		fun getStartIntent(context: Context): Intent {
-			return Intent(context, LoginActivity::class.java)
-		}
-	}
-
 	override fun goToSelection() {
-		startActivity(SelectionActivity.getStartIntent(this))
+		navigateToActivity<SelectionActivity>(this)
 		finish()
 	}
 

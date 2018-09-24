@@ -70,12 +70,6 @@ class SelectionActivity : AppCompatActivity(), SelectionView, ChannelSelectCallb
 		startActivity(intent)
 	}
 
-	companion object {
-		fun getStartIntent(context: Context): Intent {
-			return Intent(context, SelectionActivity::class.java)
-		}
-	}
-
 	override fun onDestroy() {
 		super.onDestroy()
 		presenter.detachView()
